@@ -4,9 +4,10 @@ const config = require('../config/database');
 const Pass = require('../models/pass');
 
 
-router.get('/pass',(req,res)=>{
+router.get('/pass',(req,res,next)=>{
   res.json({
-    Pass:newpass
+    Pass:res.pass
+    
   });
   /* 
   var ret=Pass.getPasses(req);

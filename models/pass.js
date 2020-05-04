@@ -17,8 +17,9 @@ const PassSchema = mongoose.Schema({
   const Pass = module.exports = mongoose.model('Pass', PassSchema);
 
 
-  module.exports.getUserById = function(id, callback){
-    Pass.findById(id, callback);
+  module.exports.getUserByUsername = function(id, callback){
+    const query = {thekey: id}
+    Pass.findOne(query, callback);
   }
 
   module.exports.addPass = function(newPass, callback){
